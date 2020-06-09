@@ -1,0 +1,74 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Name>gvalocation</Name>
+    <ProjectGuid>{2852e35e-8ddb-44b6-9e33-1fca2d71ddab}</ProjectGuid>
+    <RootNamespace>
+    </RootNamespace>
+    <OutputType>Library</OutputType>
+    <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
+    <SpecificPageValue>ou.html</SpecificPageValue>
+    <StartAction>SpecificPage</StartAction>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <IncludeDebugInformation>true</IncludeDebugInformation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <IncludeDebugInformation>false</IncludeDebugInformation>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="images\1.png" />
+    <Compile Include="images\10.png" />
+    <Compile Include="images\11.png" />
+    <Compile Include="images\12.png" />
+    <Compile Include="images\13.png" />
+    <Compile Include="images\14.png" />
+    <Compile Include="images\15.png" />
+    <Compile Include="images\16.png" />
+    <Compile Include="images\17.png" />
+    <Compile Include="images\18.png" />
+    <Compile Include="images\19.png" />
+    <Compile Include="images\2.png" />
+    <Compile Include="images\20.png" />
+    <Compile Include="images\21.JPG" />
+    <Compile Include="images\22.JPG" />
+    <Compile Include="images\3.png" />
+    <Compile Include="images\4.png" />
+    <Compile Include="images\5.png" />
+    <Compile Include="images\6.png" />
+    <Compile Include="images\7.png" />
+    <Compile Include="images\8.png" />
+    <Compile Include="images\9.png" />
+    <Compile Include="affichage.php" />
+    <Compile Include="affichage2.html" />
+    <Compile Include="affichage2.php" />
+    <Compile Include="clientcb.php" />
+    <Compile Include="commande.php" />
+    <Compile Include="em.html" />
+    <Compile Include="formulaire.html" />
+    <Compile Include="hh.php" />
+    <Compile Include="ht.html" />
+    <Compile Include="html.html" />
+    <Compile Include="imprimante.php" />
+    <Compile Include="ok.php" />
+    <Compile Include="ou.html" />
+    <Compile Include="p.php" />
+    <Compile Include="paiement.php" />
+    <Compile Include="pro.html" />
+    <Compile Include="pto.png" />
+    <Compile Include="site.html" />
+    <Compile Include="vehi.html" />
+    <Compile Include="vehicule.html" />
+    <Compile Include="vehicule2.html" />
+    <Compile Include="voiture.png" />
+    <Compile Include="voiture2.jpg" />
+    <Compile Include="vehicule (1).sql" />
+    <Compile Include="serveur_paiement.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="composer.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="images\" />
+  </ItemGroup>
+</Project>

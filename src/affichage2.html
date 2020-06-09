@@ -1,0 +1,425 @@
+<html>
+<style>
+  #haut {
+    background-color: #1A4668;
+  }
+
+  .lieu {
+    color: rgba(0, 0, 0, 0.514);
+  }
+
+  .equipement {
+    color: rgba(0, 0, 0, 0.514);
+  }
+
+  #color {
+    color: #1A4668;
+    font-family: serif;
+  }
+
+  .color1 {
+    color: #1A4668;
+    font-family: serif;
+  }
+
+  .btn {
+    color: white;
+    background-color: #1A4668;
+    margin-left: 8rem;
+    margin-bottom: 1rem;
+
+
+  }
+
+  .lds-roller {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+  }
+
+  .lds-roller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 32px 32px;
+  }
+
+  .lds-roller div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: black;
+    margin: -3px 0 0 -3px;
+  }
+
+  .lds-roller div:nth-child(1) {
+    animation-delay: -0.036s;
+  }
+
+  .lds-roller div:nth-child(1):after {
+    top: 50px;
+    left: 50px;
+  }
+
+  .lds-roller div:nth-child(2) {
+    animation-delay: -0.072s;
+  }
+
+  .lds-roller div:nth-child(2):after {
+    top: 54px;
+    left: 45px;
+  }
+
+  .lds-roller div:nth-child(3) {
+    animation-delay: -0.108s;
+  }
+
+  .lds-roller div:nth-child(3):after {
+    top: 57px;
+    left: 39px;
+  }
+
+  .lds-roller div:nth-child(4) {
+    animation-delay: -0.144s;
+  }
+
+  .lds-roller div:nth-child(4):after {
+    top: 58px;
+    left: 32px;
+  }
+
+  .lds-roller div:nth-child(5) {
+    animation-delay: -0.18s;
+  }
+
+  .lds-roller div:nth-child(5):after {
+    top: 57px;
+    left: 25px;
+  }
+
+  .lds-roller div:nth-child(6) {
+    animation-delay: -0.216s;
+  }
+
+  .lds-roller div:nth-child(6):after {
+    top: 54px;
+    left: 19px;
+  }
+
+  .lds-roller div:nth-child(7) {
+    animation-delay: -0.252s;
+  }
+
+  .lds-roller div:nth-child(7):after {
+    top: 50px;
+    left: 14px;
+  }
+
+  .lds-roller div:nth-child(8) {
+    animation-delay: -0.288s;
+  }
+
+  .lds-roller div:nth-child(8):after {
+    top: 45px;
+    left: 10px;
+  }
+
+  @keyframes lds-roller {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="iso-8859-1">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div>
+    <center id="haut">
+      <img src="pto.png" height="120" style="padding-right:70;">
+    </center>
+
+  </div>
+  <br><br>
+
+
+  <div ng-app="myApp" ng-controller="myCtrl">
+    <div class="container" style="padding-bottom: 10rem;">
+      <div class="row">
+
+        <div class="col-5" style="height:10rem !important;"><img id="images" src="{{date2}}" style="width: 19rem;">
+          <div class="col" style="padding-left: 3em;">
+            <h3>{{ date6 }} {{ date7 }}</h3> Categorie: ({{date5}})
+          </div><br>
+          <div class="depart" class="col" style="padding-left: 3em;"> Depart </div>
+          <div class="lieu" class="col" style="padding-left: 3em;">{{date8}}<br>
+            {{date10}} </div><br>
+          <div class="retour" class="col" style="padding-left: 3em;"> Retour </div>
+          <div class="lieu" class="col" style="padding-left: 3em;"> {{date9}}<br>
+            {{date11}} </div><br>
+          <div class="retour" class="col" style="padding-left: 3em;"> Periode de location </div>
+          <div class="lieu" class="col" style="padding-left: 3em;"> {{date12}} jour </div><br>
+          <div class="equipements" class="col" style="padding-left: 3em;"> Equipement du vehicule </div>
+          <div class="equipement" class="col" style="padding-left: 3em;"><img class="image" src="21.jpg" "> Boite {{date3}}  <br>  </div><br>
+                              <div class=" equipements" class="col" style="padding-left: 3em;"> Capacite </div>
+          <div class="equipement" class="col" style="padding-left: 3em;"><img class="image" src="22.jpg" ">  {{date4}} personnes <br>  </div>                      
+                    </div>
+                    
+          <div class=" col-7" style="padding-right:10rem;">
+            <h1 id="color"> Details personnels </h1>
+            <h4 class="color1"> Nom du conducteur</h4>
+            <label for="choix">Civilité</label>
+            <input list="Civi" type="text" id="choix">
+            <datalist id="Civi">
+              <option value="M.">
+              <option value="Mlle">
+              <option value="Mmme">
+
+            </datalist>
+            <br>
+            <label for="prenom">Prenom</label>
+            <input type="text" id="prenom" name="prenom" style="width: 15rem;" required><br>
+            <label for="nom">Nom de famille</label>
+            <input type="text" id="nom" name="nom" style="width: 15rem;" required><br>
+            <label for="naissance">Date de naissance</label>
+            <input type="date" id="naissance" name="naissance" style="width: 15rem;" required><br>
+
+            <h4 class="color1"> Nom du conducteur</h4>
+            <label for="mail">E-Mail</label>
+            <input type="email" id="mail" name="mail" style="width: 15rem;" required><br>
+            <label for="telephone">Telephone</label>
+            <input type="tel" id="telephone" name="telephone" style="width: 15rem;" required><br>
+            <div class="">
+              <h4 class="color1"> Information du paiement du conducteur</h4>
+              <label for="carte">Numero de carte</label>
+              <input type="text" id="carte" name="carte" style="width: 15rem;" maxlength="12;" required><br>
+              <label for="valable">Valable jusqu'au</label>
+              <input list="civilitese" class="mois" id="valable" name="valable" style="width: 3rem;" required>
+              <datalist id="civilitese">
+                <option style="font-family:serif;" value="02">
+                <option style="font-family:serif;" value="03">
+                <option style="font-family:serif;" value="04">
+                <option style="font-family:serif;" value="05">
+                <option style="font-family:serif;" value="06">
+                <option style="font-family:serif;" value="07">
+                <option style="font-family:serif;" value="08">
+                <option style="font-family:serif;" value="09">
+                <option style="font-family:serif;" value="10">
+                <option style="font-family:serif;" value="11">
+                <option style="font-family:serif;" value="12">
+
+
+              </datalist>
+
+              <input list="civilites" class="annee" id="moncivilite" name="civilite" style="width: 3rem;" required>
+              <datalist id="civilites">
+                <option style="font-family:serif;" value="19">
+                <option style="font-family:serif;" value="20">
+                <option style="font-family:serif;" value="21">
+                <option style="font-family:serif;" value="22">
+                <option style="font-family:serif;" value="23">
+                <option style="font-family:serif;" value="24">
+                <option style="font-family:serif;" value="25">
+                <option style="font-family:serif;" value="26">
+                <option style="font-family:serif;" value="27">
+                <option style="font-family:serif;" value="28">
+                <option style="font-family:serif;" value="29">
+              </datalist><br>
+
+              <label for="crypto">Cryptogramme</label>
+              <input type="text" id="crypto" name="crypto" style="width: 15rem;" maxlength="3;" required><br>
+            </div>
+            <h4 class="color1"> Adresse</h4>
+            <label for="adresse">Rue / Numero</label>
+            <input list="text" id="adresse" name="adresse" ng-required="required" style="width: 15rem;" required><br>
+            <label for="postale">Code Postale</label>
+            <input type="text" id="postale" name="postale" style="width: 15rem;" required><br>
+
+            <label for="ville">Ville </label>
+            <input type="text" id="ville" name="ville" style="width: 15rem;" required><br>
+            <h4 class="color1"> Information location </h4>
+            <div style="border: solid #1A4668; width: -30;">
+              <table>
+                <tr>
+                  <th>
+                    <h5 style="margin-left:1rem;"> Votre prix total : </h5>
+                  </th>
+                  <th>
+                    <h5 style="padding-left:15rem; padding-left:-4rem;">&euro; {{calcul}}</h5>
+                  </th>
+
+                </tr>
+              </table>
+
+              <th style="padding-bottom: 3rem;"><span data-periode="250"
+                  style="padding-right: 6rem; width:5rem; padding-left:1rem; "> Periode location: {{date12}} jours
+                  {{calcul1 }}: kilometres (250km/jour) </span></th><br><br>
+              <button type="button" class="btn "> JE RESERVE MAINTENANT</button>
+              <div id="resultat" style="padding-left: 6rem;">
+
+              </div>
+
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"
+                style="display:none;" id="pto">
+                Launch demo modal
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      Paiement securisé
+
+                    </div>
+                    <div class="modal-body">
+                      <div class="lds-roller" style="padding-left: 10rem;">
+                        <div>
+
+                          <div class="modal-footer">
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <script>
+
+            var app = angular.module('myApp', []);
+            app.controller('myCtrl', function ($scope) {
+              $scope.name = location.search.split('?');
+              $scope.date = $scope.name[1];
+              $scope.date1 = $scope.name[1];
+              $scope.date2 = $scope.name[2];
+              $scope.date3 = $scope.name[3];
+              $scope.date4 = $scope.name[4];
+              $scope.date5 = $scope.name[5];
+              $scope.date6 = $scope.name[6];
+              $scope.date7 = $scope.name[7];
+              $scope.date8 = $scope.name[8].replace(/%20/g, " ");
+              $scope.date9 = $scope.name[9].replace(/%20/g, " ");
+              $scope.date10 = $scope.name[10].replace("%20", " à ");
+              $scope.date11 = $scope.name[11].replace("%20", " à ");
+              $scope.date12 = $scope.name[12];
+              $scope.id = $scope.name[13];
+              $scope.calcul = $scope.date12 * $scope.date1;
+              $scope.calcul1 = $scope.date12 * 250;
+
+
+              $(".btn").click(function () {
+
+                var numero = $("#carte").val();
+                var mois = $(".mois").val();
+                var annee = $(".annee").val();
+                var crypto = $("#crypto").val();
+                var argent = $scope.calcul;
+                var id = $scope.id;
+
+                //variable du formulaire inscription du identité
+                var civilite = $("#choix").val();
+                var prenom = $("#prenom").val();
+                var nom = $("#nom").val();
+                var naissance = $("#naissance").val();
+                var mail = $("#mail").val();
+                var telephone = $("#telephone").val();
+                var adresse = $("#adresse").val();
+                var postale = $("#postale").val();
+                var ville = $("#ville").val();
+                var date_depart = $scope.name[10].replace(/%20/g, " ");
+                var date_retour = $scope.name[11].replace(/%20/g, " ");
+
+                var lieu_depart = $scope.date8;
+                var lieu_retour = $scope.date9;
+
+                var marque = $scope.date6;
+                var modele = $scope.date7;
+                var boite = $scope.date3;
+                var capacite = $scope.date4;
+                var duree = $scope.date12;
+                var kilo = $scope.calcul1;
+                var prixjour = $scope.date1;
+
+
+                $.ajax({
+                  url: "paiement.php",
+                  method: "post",
+                  data: "&numeros=" + numero + "&moise=" + mois + "&annees=" + annee + "&cryptos=" + crypto + "&argents=" + argent + "&civilite=" + civilite + "&prenom=" + prenom + "&nom=" + nom + "&naissance=" + naissance + "&mail=" + mail + "&telephone=" + telephone + "&adresse=" + adresse + "&postale=" + postale + "&ville=" + ville + "&depart=" + date_depart + "&retour=" + date_retour + "&id=" + id + "&lieu_depart=" + lieu_depart + "&lieu_retour=" + lieu_retour
+
+                }).done(function (data) {
+               
+              alert(data);
+                  if (data > 0 ) {
+                    $("#resultat").html("Votre paiement  accepté").css("font-weight", "bold");
+                    document.location.href = "imprimante.php?&nom= " + nom + "&prenom=" + prenom + "&naissance=" + naissance + "&lieu_depart=" + lieu_depart + "&lieu_retour=" + lieu_retour + "&date_depart=" + date_depart + "&date_retour=" + date_retour + "&marque=" + marque + "&modele=" + modele + "&boite=" + boite + "&capacite=" + capacite + "&duree=" + duree + "&kilo=" + kilo + "&argent=" + argent + "&prixjour=" + prixjour + "&adresse=" + adresse + "&postale=" + postale + "&ville=" + ville;
+                  }
+                  else   {
+                    $("#resultat").html("Votre paiement est refusé").css("font-weight", "bold");
+                    
+                  }
+
+
+});
+
+              });
+
+
+
+            });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </script>
+
+</body>
+
+</html>

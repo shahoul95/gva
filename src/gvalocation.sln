@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{A0786B88-2ADB-4C21-ABE8-AA2D79766269}") = "gvalocation", "gvalocation.phpproj", "{2852E35E-8DDB-44B6-9E33-1FCA2D71DDAB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2852E35E-8DDB-44B6-9E33-1FCA2D71DDAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2852E35E-8DDB-44B6-9E33-1FCA2D71DDAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7F9A5BC-04F9-4147-B9DD-F287AF1AEAF3}
+	EndGlobalSection
+EndGlobal

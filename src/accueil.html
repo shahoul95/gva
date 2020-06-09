@@ -1,0 +1,230 @@
+<html>
+
+<head>
+    <style>
+        /*search box css start here*/
+        .search-sec {
+            padding: 20rem;
+        }
+
+        .search-slt {
+            display: block;
+            width: 100%;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            color: #55595c;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            height: calc(3rem + 2px) !important;
+            border-radius: 0;
+        }
+
+        .wrn-btn {
+            width: 100%;
+            font-size: 16px;
+            font-weight: 400;
+            text-transform: capitalize;
+            height: calc(3rem + 2px) !important;
+            border-radius: 0;
+
+        }
+
+        @media (min-width: 60rem) {
+            .search-sec {
+                position: relative;
+                top: -700px;
+
+                padding-top: 15rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .search-sec {
+                background: #1A4668;
+
+            }
+        }
+
+        p {
+            color: white;
+        }
+
+        #haut {
+            background-color: #1A4668;
+        }
+
+        #ping {
+            margin-left: 25rem;
+        }
+
+        #pong {
+            margin-right: 3rem;
+        }
+
+        #peugeot {
+            background-color: white;
+        }
+
+        .btn {
+            background-color: rgba(6, 11, 88, 0.938);
+            color: white;
+        }
+
+        #pto {
+            background-color: rgba(0, 0, 0, 0.158);
+            width: 200%;
+
+            padding-bottom: 10%;
+            padding-left: 10%;
+            padding-right: 10%;
+            margin-bottom: 100%;
+
+        }
+
+        #co {
+            visibility: hidden;
+        }
+
+        #btn2 {
+            background-color: rgba(6, 11, 88, 0.938);
+            color: white;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <!------ Include the above in your HEAD tag ---------->
+
+</head>
+
+<body ng-app="myApp">
+    <div>
+        <center id="haut">
+            <img src="pto.png" height="140" style="padding-right:70  ">
+
+        </center>
+    </div>
+
+    <section>
+
+        <div class="o">
+            <div class="carousel-item active">
+                <img src="voiture.png" class="d-block w-100" alt="...">
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <section class="search-sec">
+        <div class="container" id="pto">
+            <a style="margin-right:3rem; color:white; padding-top: 2rem; font-weight: bold;" href="#/!">LOUER UNE
+                VOITURE</a>
+
+            <a href="#!billet" style="color:white; padding-top: 2rem; margin-right: 10rem; font-weight: bold;">RECHERCHE
+                N&deg;BILLET</a><br><br>
+
+
+            <div ng-view></div>
+        </div>
+
+
+
+
+    </section>
+
+    <script>
+        // a new fonction
+        var app = angular.module("myApp", ["ngRoute"]);
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when("/", {
+                    templateUrl: "accueil1.html"
+                })
+                .when("/billet", {
+                    templateUrl: "accueil2.html"
+                })
+        });
+
+        // a new fonction
+        $(document).ready(function () {
+            var aeroport = $("#destination").val();
+            var aeroports = $("#retour").html();
+
+            $.ajax({
+                url: "affichage.php",
+                data: "&dest=" + aeroport + "&dests=" + aeroports
+            }).done(function (data) {
+                for (var a in data) {
+                    $("#destination").append('<option selected="selected">' + data[a].nom + ", " + data[a].pays + "," + data[a].identifiant + '</option>');
+                    $("#retour").append('<option selected="selected">' + data[a].nom + ", " + data[a].pays + "," + data[a].identifiant + '</option>');
+                }
+            });
+        });
+
+        // a new fonction
+        $(document).on('click', '.btn', function () {
+            var horaire = $("#heure").val();
+            var mavariable3 = $("#heures").val();
+            var mavariable = $(".p").val();
+            var mavariable2 = $(".s").val();
+            var data1 = mavariable.split(",");
+            var data2 = mavariable2.split(",");
+            var data3 = mavariable3.split("-");
+            var data4 = horaire.split("-");
+
+            if (data1[2] != data2[2]) {
+                $("#out").html("Les lieu de retrait et retour ne sont pas disponible ");
+            }
+            else if (data3[0] < data4[0] && data3[1] < data4[1]) {
+                $("#out").html("Lheure de retour est inferieur a la date de depart");
+            }
+            else {
+                document.location.href = "vehicule.html?" + mavariable + "?" + mavariable2 + "?" + horaire + "?" + mavariable3;
+            }
+
+        });
+
+        // a new fonction
+        $(document).on('click', '#btn2', function () {
+
+            var billet = $(".billet").val();
+            $.ajax({
+                url: "affichage2.php",
+                data: "&billets=" + billet
+            }).done(function (data) {
+
+                var a = data[1].heure_arrivee;
+                var b = data[1].heure_depart;
+
+                var c = data[0].depart;
+                var d = data[1].arrivee;
+                document.location.href = "vehicule2.html?" + a + "?" + b + "?" + d + "?" + c;
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,429 @@
+<html>
+<style>
+    .prix {
+        Font-Weight: Bold;
+    }
+
+    #haut {
+        background-color: #1A4668;
+    }
+
+    .btn3 {
+        background-color: #1A4668;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+
+    .btn2 {
+        background-color: #1A4668;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+
+    .btn1 {
+        background-color: #1A4668;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+    }
+</style>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+</head>
+
+
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <div>
+            <center id="haut">
+                <img src="pto.png" height="120" style="padding-right:70">
+            </center>
+
+            <div class="row" style="background-color:#c7c4c446;padding-top:2rem; padding-right:2rem;">
+                <div class="col-12" style="margin-bottom: 10px;">
+                    <div class="d-flex justify-content-center"><i class="fa fa-arrow-right" id="choix"
+                            style="font-size: 20px;"> {{date3  }} le {{date1}} </i><i class="fa fa-arrow-right"
+                            style="padding-left:1rem; font-size: 20px;"> {{date4}} le {{date2}} </i><i
+                            class="fa fa-arrow-right" style="padding-left:1rem; font-size: 20px; padding-right:4rem;">
+                            Periode de location : {{affiche}} jours </i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Tout
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+                        <label class="form-check-label" for="defaultCheck1">
+                            <input type="checkbox" value="" id="tout" checked>
+                            Tout categorie
+                            <br>
+                            <br>
+                            <button class="btn2">Appliquer</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Categorie
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <label class="form-check-label" for="defaultCheck1">
+                            <input type="checkbox" value="" id="SUV">
+                            SUV
+                            <br>
+                            <label class="form-check-label" for="defaultCheck1">
+                                <input type="checkbox" value="" id="Berline">
+                                Berline
+                                <br>
+                                <label class="form-check-label" for="defaultCheck1">
+                                    <input type="checkbox" value="" id="Monospace">
+                                    Monospace
+                                    <br>
+
+                                    <button class="btn1">Appliquer</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Boite
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <label class="form-check-label" for="defaultCheck1">
+                            <input type="checkbox" value="" id="Automatique" checked>
+                            Automatique
+                            <br>
+                            <label class="form-check-label" for="defaultCheck1">
+                                <input type="checkbox" value="" id="Manuelle" checked>
+                                Manuelle
+                                <br>
+                                <button class="btn1">Appliquer</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Prix
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <label class="form-check-label" for="defaultCheck1">
+                            <input type="checkbox" value="" id="ASC">
+                            Prix croissant
+                            <br>
+                            <label class="form-check-label" for="defaultCheck1">
+                                <input type="checkbox" value="" id="DESC">
+                                Prix decroissant
+                                <br>
+                                <button class="btn1">Appliquer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+
+    <div id="marques">
+
+
+
+
+
+        <script>
+
+            // new fonction
+            $(document).ready(function () {
+                var b = location.search;
+                var o = b.replace(/%20/g, " T");
+                b = o.split('?');
+                var e = b[1];
+                var f = b[2];
+
+                var automatiquese = document.getElementById("Automatique");
+                var manuellese = document.getElementById("Manuelle");
+
+                if (automatiquese.checked == true) {
+                    var automatiquesses = $(automatiquese).attr("id");
+                }
+                if (manuellese.checked == true) {
+                    var manuellesses = $(manuellese).attr("id");
+                }
+
+                $.ajax({
+                    url: "affichage2.php",
+                    method: "post",
+                    data: "&automatique=" + automatiquesses + "&manuelle=" + manuellesses + "&departs=" + e + "&retours=" + f
+                }).done(function (data) {
+                    for (var i in data) {
+                        $("#marques").append(
+                            '<br> <div class="container" style="padding-right:8rem; height:10rem;"><div class="row justify-content-center" style="height:10rem;"><div class="col-3 border" style="height:10rem;"><img id="'
+                            + data[i].image + '" class="images" src="'
+                            + data[i].image + '" style="width: 16rem; margin-top:2rem;  padding-right:2rem;  "  > </div> <div class="col-4 border"><h5 id="'
+                            + data[i].marque + data[i].modele + '" class="card-title">  ' + data[i].marque + "  " + data[i].modele + ' </h5><h6 id="'
+                            + data[i].categorie + '">Categorie: ' + data[i].categorie + '</h6> <img id="' + data[i].places + '" src="22.jpg"> '
+                            + data[i].places + ' &nbsp;&nbsp;<img id="' + data[i].boite + '" src="21.jpg">' + data[i].boite + '<br><p class="prix"  id="'
+                            + data[i].prix + '"><br> Prix: '
+                            + data[i].prix + '&euro;/j</p></div> <div class="col-3 border"> <i class="fa fa-check" style="margin-top:1rem;"> Forfait 250 kilometre</i><br><br><button class="btn3" style="margin-top:2rem; margin-bottom:1rem;" class="btn3" id="selectionner" data-prix="'
+                            + data[i].prix + '" data-image="' + data[i].image + '" data-place="' + data[i].places + '" data-boite="' + data[i].boite + '" data-categorie="' + data[i].categorie + '" data-marque="' + data[i].marque + '" data-modele="' + data[i].modele + '" data-kilometre="250" data-id="' + data[i].id + '";>Selectionner</button> </div> </div></div> </div>');
+                    }
+                });
+            });
+
+            // new fonction
+            $(".btn1").click(function () {
+                var suv = document.getElementById("SUV");
+                var berline = document.getElementById("Berline");
+                var monospace = document.getElementById("Monospace");
+                var automatique = document.getElementById("Automatique");
+                var manuelle = document.getElementById("Manuelle");
+                var croissant = document.getElementById("ASC");
+                var decroissant = document.getElementById("DESC");
+                var b = location.search;
+                var o = b.replace(/%20/g, " T");
+                b = o.split('?');
+                var a = b[1];
+                var c = b[2];
+
+                if (suv.checked == true) {
+                    var suvs = $(suv).attr("id");
+                }
+                if (berline.checked == true) {
+                    var berlines = $(berline).attr("id");
+                }
+                if (monospace.checked == true) {
+                    var monospaces = $(monospace).attr("id");
+                }
+                if (automatique.checked == true) {
+                    var automatiques = $(automatique).attr("id");
+                }
+                if (manuelle.checked == true) {
+                    var manuelles = $(manuelle).attr("id");
+                }
+                if (decroissant.checked == true) {
+                    var ordre = $(decroissant).attr("id");
+                }
+                else {
+                    var ordre = $(croissant).attr("id");
+                }
+
+                $.ajax({
+                    url: "affichage2.php",
+                    method: "post",
+                    data: "&suvs=" + suvs + "&berlines=" + berlines + "&monospaces=" + monospaces + "&automatiques=" + automatiques + "&manuelles=" + manuelles + "&ordre=" + ordre + "&departs=" + a + "&retours=" + c
+                }).done(function (data) {
+                    $("#marques").html("");
+                    $("#tout").removeAttr("checked");
+
+                    for (var i in data) {
+                        $("#marques").append(
+                            '<br> <div class="container" style="padding-right:8rem;"><div class="row justify-content-center"><div class="col-3 border"><img id="'
+                            + data[i].image + '" class="images" src="'
+                            + data[i].image + '" style="width: 17rem; margin-top:2rem;  padding-right:2rem;  "  > </div> <div class="col-4 border"><h5 id="'
+                            + data[i].marque + data[i].modele + '" class="card-title">  ' + data[i].marque + "  " + data[i].modele + ' </h5><h6 id="'
+                            + data[i].categorie + '">Categorie: ' + data[i].categorie + '</h6> <img id="' + data[i].places + '" src="22.jpg"> '
+                            + data[i].places + ' &nbsp;&nbsp;<img id="' + data[i].boite + '" src="21.jpg">' + data[i].boite + '<br><p class="prix"  id="'
+                            + data[i].prix + '"><br> Prix: '
+                            + data[i].prix + '&euro;/j</p></div> <div class="col-3 border"><i class="fa fa-check" style="margin-top:1rem;"> Forfait 250 kilometre</i> <br><br><button class="btn3" id="selectionner" data-prix="'
+                            + data[i].prix + '" data-image="' + data[i].image + '" data-place="' + data[i].places + '" data-boite="' + data[i].boite + '" data-categorie="' + data[i].categorie + '" data-marque="' + data[i].marque + '" data-modele="' + data[i].modele + '" data-kilometre="250" data-id="' + data[i].id + '";>Selectionner</button> </div> </div></div> </div>');
+                    }
+                });
+            });
+
+           
+            $(".btn2").click(function () {
+                var tout = document.getElementById("tout");
+                var monospace = document.getElementById("Monospace");
+                var suv = document.getElementById("SUV");
+                var berline = document.getElementById("Berline");
+                var b = location.search;
+                var o = b.replace(/%20/g, " T");
+                b = o.split('?');
+                var a = b[1];
+                var c = b[2];
+
+                if (tout.checked == true) {
+                    var touts = $(tout).attr("id");
+                }
+                if (monospace.checked == true) {
+                    var monospaces = $(monospace).attr("id");
+                }
+                $.ajax({
+                    url: "affichage2.php",
+                    method: "post",
+                    data: "&tout=" + touts + "&departs=" + a + "&retours=" + c
+                }).done(function (data) {
+                    $("#marques").html("");
+                    $(monospaces).removeAttr("checked");
+                    $("#Berline").removeAttr("checked");
+                    $("#Monospace").removeAttr("checked");
+                    $("#Automatique").attr('checked');
+                    $("#Manuelle").attr('checked');
+
+                    for (var i in data) {
+                        $("#marques").append(
+                            '<br> <div class="container" style="padding-right:8rem;"><div class="row justify-content-center"><div class="col-3 border"><img id="'
+                            + data[i].image + '" class="images"src="'
+                            + data[i].image + '" style="width: 17rem; margin-top:2rem;  padding-right:2rem;  "  > </div> <div class="col-4 border"><h5 id="'
+                            + data[i].marque
+                            + data[i].modele + '" class="card-title">  '
+                            + data[i].marque + "  "
+                            + data[i].modele + ' </h5><h6 id="'
+                            + data[i].categorie + '">Categorie: '
+                            + data[i].categorie + '</h6> <img id="'
+                            + data[i].places + '" src="22.jpg"> '
+                            + data[i].places + ' &nbsp;&nbsp;<img id="'
+                            + data[i].boite + '" src="21.jpg">'
+                            + data[i].boite + '<br><p class="prix"  id="'
+                            + data[i].prix + '"><br> Prix: '
+                            + data[i].prix + '&euro;/j</p></div> <div class="col-3 border"><i class="fa fa-check" style="margin-top:1rem;"> Forfait 250 kilometre</i><br><br><button class="btn3" id="selectionner" data-prix="'
+                            + data[i].prix + '" data-image="' + data[i].image + '" data-place="' + data[i].places + '" data-boite="' + data[i].boite + '" data-categorie="' + data[i].categorie + '" data-marque="' + data[i].marque + '" data-modele="' + data[i].modele + '" data-kilometre="250" data-id="' + data[i].id + '";>Selectionner</button> </div> </div></div> </div>');
+                    }
+                });
+            });
+
+            // new fonction
+            var app = angular.module('myApp', []);
+            app.controller('myCtrl', function ($scope) {
+                $scope.name = location.search.split('?');
+                $scope.date1 = $scope.name[1].replace(/%20/g, " ");
+                $scope.date2 = $scope.name[2].replace(/%20/g, " ");
+                $scope.date3 = $scope.name[3].replace(/%20/g, " ");
+                $scope.date4 = $scope.name[4].replace(/%20/g, " ");
+                date1 = new Date($scope.date1);
+                date2 = new Date($scope.date2);
+                tmp = date2 - date1
+
+                var diff = {}                           // Initialisation du retour
+                var tmp = date2 - date1;
+
+                tmp = Math.floor(tmp / 1000);             // Nombre de secondes entre les 2 dates
+                diff.sec = tmp % 60;                    // Extraction du nombre de secondes
+
+                tmp = Math.floor((tmp - diff.sec) / 60);    // Nombre de minutes (partie entière)
+                diff.min = tmp % 60;                    // Extraction du nombre de minutes
+
+                tmp = Math.floor((tmp - diff.min) / 60);    // Nombre d'heures (entières)
+                diff.hour = tmp % 24;                   // Extraction du nombre d'heures
+
+                tmp = Math.floor((tmp - diff.hour) / 24);   // Nombre de jours restants
+                diff.day = tmp;
+
+                $scope.affiche = diff.day;
+            });
+
+            // new fonction
+            $(document).on('click', '.btn3', function () {
+                $scope = {};
+                $scope.name = location.search.split('?');
+                $scope.date1 = $scope.name[1].replace(/%20/g, " ");
+                $scope.date2 = $scope.name[2].replace(/%20/g, " ");
+                $scope.date3 = $scope.name[3].replace(/T/g, " ");
+                $scope.date4 = $scope.name[4].replace(/T/g, " ").replace(/%3A/g, ":");
+                date1 = new Date($scope.date1);
+                date2 = new Date($scope.date2);
+                tmp = date2 - date1
+
+                var diff = {}                           // Initialisation du retour
+                var tmp = date2 - date1;
+
+                tmp = Math.floor(tmp / 1000);             // Nombre de secondes entre les 2 dates
+                diff.sec = tmp % 60;                    // Extraction du nombre de secondes
+
+                tmp = Math.floor((tmp - diff.sec) / 60);    // Nombre de minutes (partie entière)
+                diff.min = tmp % 60;                    // Extraction du nombre de minutes
+
+                tmp = Math.floor((tmp - diff.min) / 60);    // Nombre d'heures (entières)
+                diff.hour = tmp % 24;                   // Extraction du nombre d'heures
+
+                tmp = Math.floor((tmp - diff.hour) / 24);   // Nombre de jours restants
+                diff.day = tmp;
+
+                $scope.affiche = diff.day;
+
+                var mavariable = $(this).attr("id");
+                var prix = $(this).attr('data-prix');
+                var image = $(this).attr('data-image');
+                var boite = $(this).attr('data-boite');
+                var place = $(this).attr('data-place');
+                var categorie = $(this).attr('data-categorie');
+                var marque = $(this).attr('data-marque');
+                var modele = $(this).attr('data-modele');
+
+                var date = $scope.date1;//depart
+
+
+                var date1 = $scope.date2;//retour
+
+                var date3 = $scope.date3;//departheure
+                var date4 = $scope.date4;//departretour
+                var affiche = $scope.affiche;//periode
+                var kilometre = $(this).attr('data-kilometre');
+                var id = $(this).attr('data-id');
+                
+
+                document.location.href = "affichage2.html?" + prix + "?" + image + "?" + boite + "?" + place + "?" + categorie + "?" + marque + "?" + modele + "?" + date3 + "?" + date4 + "?" + date + "?" + date1 + "?" + affiche + "?" + id;
+            });
+
+        </script>
+
+
+
+
+
+
+</body>
+
+
+</html>
