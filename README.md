@@ -21,3 +21,13 @@ disponible dans le compte bancaire du client, donc le paiement est accepté.
 Lors de la confirmation du paiement, une impression du ticket de location se fait à l’aide d’une
 bibliothèque avec l’imprimante thermique et ainsi qu’un envoie de mail comportant une facture en
 PDF se fait aussi à l’aide d’une bibliothèque.
+
+# Conception 
+
+ - HTML/CSS
+ - jQuery
+ - PHP/MySQL
+ # Bibliothèque/Composer
+ -  PHPMailer
+ -  ESC/POS Print Driver for PHP
+ -  mPDF
